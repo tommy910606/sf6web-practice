@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>開啟和關閉樣式示例</title>
+    <style>
+        /* 隱藏內容的初始樣式 */
+        .content {
+            width: 300px;
+            height: 0; /* 初始高度為0，隱藏內容 */
+            overflow: hidden;
+            background-color: lightblue;
+            transition: height 0.5s ease; /* 高度過渡動畫 */
+        }
+
+        /* 展開內容時應用的樣式 */
+        .content.open {
+            height: 150px; /* 展開後的高度 */
+        }
+
+        .toggle-button {
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .toggle-button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="toggle-button" onclick="toggleContent()">顯示/隱藏內容</button>
+    
+    <div class="content" id="content-box">
+        <p>這是可以開啟和關閉的內容。</p>
+        <p>你可以添加任意多的內容。</p>
+    </div>
+
+    <script>
+        function toggleContent() {
+            var content = document.getElementById('content-box');
+            content.classList.toggle('open'); // 切換 .open 樣式
+        }
+    </script>
+
+</body>
+</html>
