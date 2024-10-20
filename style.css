@@ -1,0 +1,103 @@
+/* 基本樣式 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* 導航欄樣式 */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none; /* 移除項目符號 */
+    padding: 0;
+    margin: 0;
+    display: flex; /* 使用 flexbox 讓列表項目水平排列 */
+    background-color: #333; /* 導航欄背景色 */
+    justify-content: flex-start; /* 導航項目靠左排列 */
+}
+
+nav ul li {
+    position: relative; /* 父元素相對定位，用於下拉內容的定位 */
+    text-align: center;
+    margin-right: 30px; /* 每個導航項目之間的間距 */
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    background-color: #007BFF; /* 滑過時改變背景色 */
+}
+
+/* 下拉選單樣式 */
+.dropdown .dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #333; /* 更深的背景色 */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white; /* 白色文字 */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #555; /* 滑過時的背景色 */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* 滑過下拉選單時顯示內容 */
+}
+
+/* 內容樣式 */
+.content {
+    margin: 20px;
+    padding: 20px; /* 添加內邊距 */
+    background-color: #fff; /* 白色背景 */
+    border-radius: 5px; /* 圓角邊框 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 陰影效果 */
+}
+
+.content h2 {
+    font-size: 24px;
+}
+
+.content p {
+    font-size: 18px; /* 增大段落文字的字體大小 */
+    line-height: 1; /* 提高行距使文本更容易閱讀 */
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* 改成垂直排列 */
+    }
+
+    nav ul li {
+        margin-right: 0; /* 移除項目之間的水平間距 */
+        margin-bottom: 10px; /* 垂直項目之間的間距 */
+    }
+}
+
